@@ -81,7 +81,7 @@ namespace Labb1v._2
                     }
                 }
             }
-            // Skapa mellanrum
+            // Skapa ny rad för kommande utskrift
             Console.WriteLine("");
             // Skriv ut (sumOfNumbers)
             Console.WriteLine("Total = " + sumOfNumbers);
