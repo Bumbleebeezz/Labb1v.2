@@ -6,7 +6,7 @@ namespace Labb1v._2
     {
         static void Main(string[] args)
         {
-            int count = 0;
+            
             long sumOfNumbers = 0;
             char[] numbers = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
@@ -15,12 +15,14 @@ namespace Labb1v._2
 
             for (int i = 0; i < inputString.Length; i++) 
             {
+                int counter = 0;
                 string numberFound = string.Empty;
                 if (!numbers.Contains(inputString[i]))
                 {
                     continue;
                 }
                 numberFound += inputString[i]; 
+                counter++;
                 
                 for (int j = i + 1; j < inputString.Length; j++)
                 {
@@ -29,23 +31,25 @@ namespace Labb1v._2
                         break;
                     }
                     numberFound += inputString[j];
-                    
+                    counter++;
 
-                    if (inputString[i] == inputString[j])
-                    {
-                        count++;
-                        var beforeNumberFound = inputString.Substring(0, i);
-                        var afterNumberFound = inputString.Substring(j + 1, inputString.Length - j - 1);
+                    if (counter >= 3) 
+                    { 
+                        if (inputString[i] == inputString[j])
+                        {
+                            var beforeNumberFound = inputString.Substring(0, i);
+                            var afterNumberFound = inputString.Substring(j + 1, inputString.Length - j - 1);
 
-                        sumOfNumbers += long.Parse(numberFound);
-                        Console.WriteLine("");
-                        Console.Write(beforeNumberFound);
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write(numberFound);
-                        Console.ResetColor();
-                        Console.Write(afterNumberFound);
+                            sumOfNumbers += long.Parse(numberFound);
+                            Console.WriteLine("");
+                            Console.Write(beforeNumberFound);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(numberFound);
+                            Console.ResetColor();
+                            Console.Write(afterNumberFound);
 
-                        break;
+                            break;
+                    }
                     }
                 }
             }
