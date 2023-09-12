@@ -8,7 +8,7 @@ namespace Labb1v._2
         {
             // Fråga användaren efter en sträng 
             Console.Write("Write a string: ");
-            // Deklarera en variabel som håller i inputen
+            // Deklarera en variabel som sparar inputen
             string inputString = Console.ReadLine();
 
             // Deklare en variabel, typ long, som håller den totala summan av alla hittade nummersträngar
@@ -21,13 +21,13 @@ namespace Labb1v._2
             {
                 // Deklarera en variabel som håller den nummersträngen som hittats, nollställs varje gång (i) ökar med 1
                 string numberFound = string.Empty;
-                // Deklarera en counter som håller koll på antalet tecken i numberFound
+                // Deklarera en variabel, en counter som håller koll på antalet tecken i numberFound
                 int counter = 0;
 
                 // Om värdet på plats (i) inte finns med i (acceptableChar)
                 if (!acceptableChar.Contains(inputString[i]))
                 {
-                    // Öka (i) med 1
+                    // Öka (i) med 1 och börja om loop (i)
                     continue;
                 }
                 // Annars lägg till värdet på plats (i)
@@ -83,7 +83,7 @@ namespace Labb1v._2
             }
             // Skapa ny rad för kommande utskrift
             Console.WriteLine("");
-            // Skriv ut (sumOfNumbers)
+            // Skriv ut den totala summan av alla nummersträngar, (sumOfNumbers)
             Console.WriteLine("Total = " + sumOfNumbers);
         }
     }
